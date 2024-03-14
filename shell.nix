@@ -11,7 +11,6 @@ in
   mkShell {
     buildInputs = with pkgs; [
       godotBin
-      godotHeadlessBin
       godotMonoBin
     ];
   }

@@ -15,11 +15,11 @@ in
 
 stdenv.mkDerivation rec {
   pname = "godot-bin";
-  version = "3.5.1";
+  version = "4.2.1";
 
   src = fetchurl {
-    url = "https://downloads.tuxfamily.org/godotengine/${version}/Godot_v${version}-${qualifier}_x11.64.zip";
-    sha256 = "kl5HGjL2mjxWktfubJXan/l7bmZu562VmD8iO6rQ4H0=";
+    url = "https://downloads.tuxfamily.org/godotengine/${version}/Godot_v${version}-${qualifier}_linux.x86_64.zip";
+    sha256 = "hjEannW3RF60IVMS5gTfH2nHLUZBrz5nBJ4wNWrjdmA=";
   };
 
   nativeBuildInputs = [autoPatchelfHook makeWrapper unzip];
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
   unpackCmd = "unzip $curSrc -d source";
   installPhase = ''
     mkdir -p $out/bin
-    install -m 0755 Godot_v${version}-${qualifier}_x11.64 $out/bin/godot
+    install -m 0755 Godot_v${version}-${qualifier}_linux.x86_64 $out/bin/godot
   '';
 
   postFixup = ''
